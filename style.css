@@ -6,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: "Raleway", sans-serif;
 }
 
 .main-div {
@@ -41,4 +42,27 @@ body {
     text-align: center;
 }
 
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+img {
+    width: 120px;
+}
+
+.weather-form {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.weather-temp{
+    font-size: 3.7rem;
+    margin: 0px;
+}
+
+.weather-info{}
 
