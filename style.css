@@ -10,7 +10,7 @@ body {
 }
 
 .main-div {
-    background-color: yellow;
+    background-color: black;
     width: 30%;
     height: 70%;
     display: flex;
@@ -29,6 +29,7 @@ body {
 .search-text {
     font-size: 2.3rem;
     margin: 25px 0px;
+    color:white;
 }
 
 .search-input {
@@ -57,12 +58,40 @@ img {
 .weather-form {
     font-size: 1rem;
     font-weight: 500;
+    color:white;
 }
 
 .weather-temp{
     font-size: 3.7rem;
     margin: 0px;
+    color:white;
 }
 
-.weather-info{}
+.weather-info{
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    width: 250px;
+    margin-top: 30px;
+    background-color: black;
+}
+
+.weather-info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 125px;
+}
+
+.weather-info-name{
+    margin-bottom: 2px;
+    color:grey;
+}
+
+.weather-info-number{
+    margin-top: 2px;
+    color:white;
+}
+
+
 
