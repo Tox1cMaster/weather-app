@@ -8,6 +8,8 @@ async function getWeather(city){
     let data = await respone.json();
 
     var city = $(".weather-city").html(data.name);
+    var temp = $(".weather-temp").html(Math.floor(data.main.temp) + "&#8451");
+    // var rain = $("#rain").html(data.rain["1h"] + " mm") ;
     return data;
 
     
