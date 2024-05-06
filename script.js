@@ -9,7 +9,20 @@ async function getWeather(city){
 
     var city = $(".weather-city").html(data.name);
     var temp = $(".weather-temp").html(Math.floor(data.main.temp) + "&#8451");
-    // var rain = $("#rain").html(data.rain["1h"] + " mm") ;
+    var humidity = $("#humidity").html(data.main.humidity + "%");
+    var wind = $("#wind").html(Math.floor(data.wind.speed)  + " km/h");
+    var pressure = $("#pressure").html(data.main.pressure + "hPa");
+    if (data.rain && data.rain["1h"]) {
+        var rain = $("#rain").html(data.rain["1h"] + " mm");
+    } else {
+        $("#rain").html("0 mm")
+    }
+
+    temp = parseInt(data.main.temp);
+
+    if (temp > 15){
+        $("#weather-img").attr("src","images/sun.png");
+    }
     return data;
 
     
