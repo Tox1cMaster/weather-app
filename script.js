@@ -23,6 +23,15 @@ async function getWeather(city){
     if (temp > 15){
         $("#weather-img").attr("src","images/sun.png");
     }
+    if (temp > 10 && temp <= 14){
+        $("#weather-img").attr("src","images/cloudy.png");
+    }
+    if (temp > 0 && temp <=10){
+        $("#weather-img").attr("src","images/cloud.png");
+    }
+    if (temp < 0){
+        $("#weather-img").attr("src","images/snow.png");
+    }
     return data;
 
     
