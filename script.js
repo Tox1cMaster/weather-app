@@ -7,6 +7,13 @@ async function getWeather(city){
     let respone = await fetch(apiUrl + city + `&appid=${apiKey}`);
     let data = await respone.json();
 
+    if (data.cod && data.cod === "404"){
+        Swal.fire({
+            title: "Błąd!",
+            text: "Podane miasto nie istnieje",
+            icon: "error"
+          });
+    }
     var city = $(".weather-city").html(data.name);
     var temp = $(".weather-temp").html(Math.floor(data.main.temp) + "&#8451");
     var humidity = $("#humidity").html(data.main.humidity + "%");
