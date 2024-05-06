@@ -14,23 +14,30 @@ async function getWeather(city){
     var pressure = $("#pressure").html(data.main.pressure + "hPa");
     if (data.rain && data.rain["1h"]) {
         var rain = $("#rain").html(data.rain["1h"] + " mm");
+        rain = parseFloat(data.rain["1h"]);
     } else {
         $("#rain").html("0 mm")
     }
 
     temp = parseInt(data.main.temp);
 
-    if (temp > 15){
-        $("#weather-img").attr("src","images/sun.png");
-    }
-    if (temp > 10 && temp <= 14){
-        $("#weather-img").attr("src","images/cloudy.png");
-    }
-    if (temp > 0 && temp <=10){
-        $("#weather-img").attr("src","images/cloud.png");
-    }
-    if (temp < 0){
-        $("#weather-img").attr("src","images/snow.png");
+    if (rain > 0 && rain <= 3){
+        $("#weather-img").attr("src","images/rain.png");
+    }else if(rain > 3) {
+        $("#weather-img").attr("src","images/storm.png");
+    }else {
+        if (temp > 15){
+            $("#weather-img").attr("src","images/sun.png");
+        }
+        if (temp > 10 && temp <= 14){
+            $("#weather-img").attr("src","images/cloudy.png");
+        }
+        if (temp > 0 && temp <=10){
+            $("#weather-img").attr("src","images/cloud.png");
+        }
+        if (temp < 0){
+            $("#weather-img").attr("src","images/snow.png");
+        }
     }
     return data;
 
